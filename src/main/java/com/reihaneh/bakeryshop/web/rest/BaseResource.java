@@ -1,7 +1,7 @@
 package com.reihaneh.bakeryshop.web.rest;
 
-import com.reihaneh.bakeryshop.domain.BaseEntity;
 import com.reihaneh.bakeryshop.service.BaseService;
+import com.reihaneh.bakeryshop.service.dto.BaseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 
-public class BaseResource<T extends BaseEntity, S extends BaseService<T, ID>, ID> {
+public class BaseResource<D extends BaseDto, S extends BaseService<D, ID>, ID> {
 
     private final S service;
 
@@ -19,35 +19,35 @@ public class BaseResource<T extends BaseEntity, S extends BaseService<T, ID>, ID
     }
 
     @PostMapping
-    public ResponseEntity<T> create(@RequestBody T entity) {
-        if (entity.getId() != null)
+    public ResponseEntity<D> create(@RequestBody D dto) {
+        if (dto.getId() != null)
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id should be null.");
 
-        T save = service.save(entity);
+        D save = service.save(dto);
         return ResponseEntity.ok(save);
     }
 
 
     @PutMapping
-    public ResponseEntity<T> update(@RequestBody T entity) {
-        if (entity.getId() == null)
+    public ResponseEntity<D> update(@RequestBody D dto) {
+        if (dto.getId() == null)
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id shouldn't be null.");
 
-        T save = service.save(entity);
+        D save = service.save(dto);
         return ResponseEntity.ok(save);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<T> findById(@PathVariable ID id){
-        Optional<T> byId = service.findById(id);
+    public ResponseEntity<D> findById(@PathVariable ID id){
+        Optional<D> byId = service.findById(id);
 
         return ResponseEntity.of(byId);
     }
 
     @GetMapping
-    public ResponseEntity<List<T>> findAll()
+    public ResponseEntity<List<D>> findAll()
     {
-        List<T> all = service.findAll();
+        List<D> all = service.findAll();
 
         return ResponseEntity.ok(all);
     }

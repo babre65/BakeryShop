@@ -1,6 +1,6 @@
 package com.reihaneh.bakeryshop.service;
 
-import com.reihaneh.bakeryshop.domain.InvoiceItem;
+import com.reihaneh.bakeryshop.service.dto.InvoiceItemDto;
 
-public interface InvoiceItemService extends BaseService<InvoiceItem, Long> {
+public interface InvoiceItemService extends BaseService<InvoiceItemDto, Long> {
 }

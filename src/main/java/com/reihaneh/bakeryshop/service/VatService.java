@@ -1,6 +1,6 @@
 package com.reihaneh.bakeryshop.service;
 
-import com.reihaneh.bakeryshop.domain.Vat;
+import com.reihaneh.bakeryshop.service.dto.VatDto;
 
-public interface VatService extends BaseService<Vat, Long> {
+public interface VatService extends BaseService<VatDto, Long> {
 }

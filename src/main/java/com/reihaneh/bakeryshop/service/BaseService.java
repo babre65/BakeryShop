@@ -1,17 +1,18 @@
 package com.reihaneh.bakeryshop.service;
 
 import com.reihaneh.bakeryshop.domain.BaseEntity;
+import com.reihaneh.bakeryshop.service.dto.BaseDto;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface BaseService<T extends BaseEntity, ID> {
+public interface BaseService<D extends BaseDto, ID> {
 
-    T save(T entity);
+    D save(D dto);
 
-    Optional<T> findById(ID id);
+    Optional<D> findById(ID id);
 
-    List<T> findAll();
+    List<D> findAll();
 
     void deleteById(ID id);
 }

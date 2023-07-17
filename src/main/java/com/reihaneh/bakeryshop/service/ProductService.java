@@ -1,6 +1,6 @@
 package com.reihaneh.bakeryshop.service;
 
-import com.reihaneh.bakeryshop.domain.Product;
+import com.reihaneh.bakeryshop.service.dto.ProductDto;
 
-public interface ProductService extends BaseService<Product, Long> {
+public interface ProductService extends BaseService<ProductDto, Long> {
 }
