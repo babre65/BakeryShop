@@ -5,15 +5,15 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class CustomerDto extends PersonDto {
+public class PersonDto extends BaseDto{
 
-    private LocalDateTime registerDate = LocalDateTime.now();
-
-    private List<InvoiceDto> invoices = new ArrayList<>();
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNo;
+    private String address;
+    private LocalDateTime birthDate;
 }

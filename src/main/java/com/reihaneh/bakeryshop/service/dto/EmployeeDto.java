@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class EmployeeDto extends BaseDto {
+public class EmployeeDto extends PersonDto {
 
     private LocalDateTime hireDate;
 
