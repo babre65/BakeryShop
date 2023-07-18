@@ -14,6 +14,8 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class Invoice extends BaseEntity {
 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long invoiceNo;
     private Double totalAmount;
     private Double totalVatAmount;
     private Double discountAmount;

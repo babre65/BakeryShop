@@ -12,6 +12,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class InvoiceDto extends BaseDto {
 
+    private Long invoiceNo;
     private Double totalAmount;
     private Double totalVatAmount;
     private Double discountAmount;
